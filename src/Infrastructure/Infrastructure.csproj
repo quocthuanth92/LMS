@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>Microsoft.eShopWeb.Infrastructure</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Identity\Migrations\**" />
+	  <EmbeddedResource Remove="Identity\Migrations\**" />
+	  <None Remove="Identity\Migrations\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Identity\AppIdentityDbContext.cs" />
+	  <Compile Remove="Identity\AppIdentityDbContextSeed.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.1.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.1.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.2" PrivateAssets="All" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\ApplicationCore\ApplicationCore.csproj" />
+	</ItemGroup>
+</Project>
